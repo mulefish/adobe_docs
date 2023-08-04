@@ -1,37 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-afded6083e02-development.min.js" async></script>
 
-    <title>adobe this</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page hello</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
+<head>
+  <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-b7483cc101a2-development.min.js" async></script>
+<!-- ENV ID  ENacadc4c0e13d437f985a5bd37f93cfb7 -->
 
-<script>
-  function fireLAMDirectCallEvent() {
-    try {
-      window._satellite.track("PaulRule", { "publishingId": "penny" })
-      console.log  ("It worked! Check the network tab!")
-    } catch (boom) {
-      alert("oh no " + boom)
+
+  <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-afded6083e02-development.min.js"
+    async></script>
+
+  <title>adobe this</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="script.js"></script>
+</head>
+
+<body>
+  <script>
+    function fireLAMDirectCallEvent() {
+      // This is it!
+      try {
+        window._satellite.track("PaulRule", { "publishingId": "penny" })
+        console.log("It worked! Check the network tab!")
+      } catch (boom) {
+        alert("oh no " + boom)
+      }
     }
-  }
-</script>
-<button onclick="fireLAMDirectCallEvent()">fireLAMDirectCallEvent</button>
+    function useDebugMode() {
+      document.getElementById("debugMode").innerHTML = "Debug mode is on"
+      try { 
+        const tracker = window._satellite; 
+        const location = window.location.href; 
+        if (_satellite) { 
+          _satellite.setDebug(true); 
+          _satellite.cookie.set('dtmTrackDev', true); 
+          sessionStorage.setItem('lapel-debugger', true); 
+          _satellite.logger.log(`(%E3%81%A3%E2%97%95%E2%80%BF%E2%97%95)%E3%81%A3 Debugging Enabled for ${location}`); 
+        } else { 
+          console.warn(`no ${tracker} detected`); 
+        } 
+      } 
+      catch (error) { 
+        console.warn(`${tracker} not detected, debugging not enabled for ${location}`);
+      }
+    }
+
+  </script>
+  <div id="debugMode">Debug mode is off</div>
+  <button onclick="fireLAMDirectCallEvent()">fireLAMDirectCallEvent</button>
+  <button onclick="useDebugMode()">useDebugMode</button>
+  <hr/>
+  <script>
+    function step1() {
+      // // choose tags 
+      document.getElementById("imageToShow").src = "a_tags_1.png"
+      document.getElementById("imageToShow").height = "500"      
+      document.getElementById("textToExplain").innerHTML = "Adobe has a special skill with labeling things! Pick the correct 'tags' link!"
+    }
+    function step2() {
+      // // choose tags 
+      document.getElementById("imageToShow").src = "a_tags_2.png"
+      // document.getElementById("imageToShow").height = "500"      
+      document.getElementById("textToExplain").innerHTML = "Francis created this tag w/ WebSDK in 2022 (?). Trivia: Lulu and Adobe have been talking about WebSDK for a little bit of time now"
+    }
+    function step3() {
+      // ENV!
+      document.getElementById("imageToShow").src = "a_env_1.png"
+      document.getElementById("imageToShow").height = "300"     
+
+      document.getElementById("textToExplain").innerHTML = ""
+    }
+    function step4() {
+      // ENV!
+      document.getElementById("imageToShow").src = "a_env_2.png"
+      document.getElementById("textToExplain").innerHTML = "Clicking is fun!"
+    }
+    function step5() {
+      
+      document.getElementById("imageToShow").src = "a_env_3.png"
+      document.getElementById("textToExplain").innerHTML = ""
+    }
+    function step6() {
+      
+      document.getElementById("imageToShow").src = "a_env_4.png"
+      document.getElementById("textToExplain").innerHTML = "Create an ENV"
+    }
+    function step7() {      
+      document.getElementById("imageToShow").src = "a_env_5.png"
+      document.getElementById("textToExplain").innerHTML = "Save this info!"
+    }
+
+  </script>
+  <frameset>
+    <legend>Do the needful!</legend>
+    <ul>
+      <li>step0: <a href="https://experience.adobe.com/#/@lululemonathleticacanadainc/sname:prod/platform/v2/home">https://experience.adobe.com/#/@lululemonathleticacanadainc/sname:prod/platform/v2/home</a></li>
+      <li><button class='steps' onCLick="step1()">step1</button>'tags' nav button.</li>
+      <li><button class='steps' onClick="step2()">step2</button>Choose the correct tag - i.e., the one with WebSDK. An 'enviornment' - create an ENV within that Tag</li>
+      <li><button class='steps' onClick="step3()">step3</button>Env nav</li>
+      <li><button class='steps' onClick="step4()">step4</button>Click 'add env' button</li>
+      <li><button class='steps' onClick="step5()">step5</button>Choices! Pick DEV</li>
+      <li><button class='steps' onClick="step6()">step6</button>Create an ENV</li>
+      <li><button class='steps' onClick="step7()">step7</button>Get receipt of script location</li>
+
+    </ul>
+  </frameset>
+  <hr/>
+  <div id="steps">
+    <div id="textToExplain"></div>
+    <img id="imageToShow"></img>
+  </div>
+  <!-- <img src="x1.png"></img>
+  <img src="x2.png"></img>
+  <img src="x3.png"></img>
+  <img src="x4.png"></img> -->
 </body>
-</html>  
+
+</html>
