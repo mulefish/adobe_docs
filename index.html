@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home</title>
+    <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-afded6083e02-development.min.js" async></script>
+
+    <title>adobe this</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <!--
@@ -19,5 +21,17 @@
     <main>
       <h1>Home page</h1>
     </main>
-  </body>
-</html>
+
+<script>
+  function fireLAMDirectCallEvent() {
+    try {
+      window._satellite.track("PaulRule", { "publishingId": "penny" })
+      console.log  ("It worked! Check the network tab!")
+    } catch (boom) {
+      alert("oh no " + boom)
+    }
+  }
+</script>
+<button onclick="fireLAMDirectCallEvent()">fireLAMDirectCallEvent</button>
+</body>
+</html>  
