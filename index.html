@@ -4,7 +4,7 @@
 <head>
   <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-b7483cc101a2-development.min.js" async></script>
 <!-- ENV ID  ENacadc4c0e13d437f985a5bd37f93cfb7 -->
-
+<!-- <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-b7483cc101a2-development.min.js" async></script> -->
 
   <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-afded6083e02-development.min.js"
     async></script>
@@ -84,12 +84,27 @@
     function step6() {
       
       document.getElementById("imageToShow").src = "a_env_4.png"
-      document.getElementById("textToExplain").innerHTML = "Create an ENV"
+      document.getElementById("textToExplain").innerHTML = "Begin to create an ENV"
     }
     function step7() {      
       document.getElementById("imageToShow").src = "a_env_5.png"
       document.getElementById("textToExplain").innerHTML = "Save this info!"
     }
+    function step8() {      
+
+      document.getElementById("imageToShow").src = "a_env_lib_6.png"
+      document.getElementById("imageToShow").height = "200"     
+
+      document.getElementById("textToExplain").innerHTML = "Let's create a lib for the env now!"
+    }
+    function step9() {      
+
+document.getElementById("imageToShow").src = "a_env_lib_7.png"
+document.getElementById("imageToShow").height = "200"     
+
+document.getElementById("textToExplain").innerHTML = "Let's create a lib for the env now!"
+}
+
 
   </script>
   <frameset>
@@ -101,8 +116,10 @@
       <li><button class='steps' onClick="step3()">step3</button>Env nav</li>
       <li><button class='steps' onClick="step4()">step4</button>Click 'add env' button</li>
       <li><button class='steps' onClick="step5()">step5</button>Choices! Pick DEV</li>
-      <li><button class='steps' onClick="step6()">step6</button>Create an ENV</li>
+      <li><button class='steps' onClick="step6()">step6</button>Start to create an ENV</li>
       <li><button class='steps' onClick="step7()">step7</button>Get receipt of script location</li>
+      <li><button class='steps' onClick="step8()">step8</button>Create a LIB for the  ENV</li>
+      <li><button class='steps' onClick="step9()">step9</button>Put LIB into a ENV and BUILD it</li>
 
     </ul>
   </frameset>
