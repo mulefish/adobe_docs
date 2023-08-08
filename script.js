@@ -1,1 +1,1 @@
-console.log('Hello!');
+alert("old school") 
