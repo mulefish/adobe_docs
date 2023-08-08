@@ -4,3 +4,10 @@
 
 # Localhost?
 python -m http.server 3030
+
+
+# github -
+eval "$(ssh-agent -s)"  
+ssh-add ~/.ssh/github2023_4
+
+
