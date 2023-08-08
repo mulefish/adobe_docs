@@ -13,7 +13,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- <script type="module" src="script.js"></script> -->
   <script src="script.js"></script>
 
 </head>
@@ -42,6 +41,7 @@
         document.getElementById("objectToSend").value = JSON.stringify(obj, null, 2)
         try {
           window._satellite.track("lam", obj)
+          console.log( "%c" + JSON.stringify(obj), "background:lightgreen")
         } catch (boom) {
           alert("oh no " + boom)
         }

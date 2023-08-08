@@ -1,12 +1,12 @@
-const tiny_information = {
-        "payload": {
-          "properties": {
-            "timestamp": 1691522180998,
-            "headerUnified": "home"
-          },
-          "anonymousId": "296bbcb1-17ca-4e29-a05b-173364be9381"
+    const tiny_information = {
+            "payload": {
+            "properties": {
+                "timestamp": 1691522180998,
+                "headerUnified": "home"
+            },
+            "anonymousId": "296bbcb1-17ca-4e29-a05b-173364be9381"
+            }
         }
-      }
 const information = {
     "payload": {
         "type": "trackEnd",
