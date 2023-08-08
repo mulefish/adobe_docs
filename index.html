@@ -5,13 +5,6 @@
 <!-- Aug8abc-->
   <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-778c6227ec42-development.min.js" async></script>
 
-  <!-- <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-b7483cc101a2-development.min.js"
-    async></script> -->
-  <!-- ENV ID  ENacadc4c0e13d437f985a5bd37f93cfb7 -->
-  <!-- <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-b7483cc101a2-development.min.js" async></script> -->
-
-  <!-- <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-afded6083e02-development.min.js"
-    async></script> -->
 
   <title>adobe this</title>
   <meta charset="UTF-8" />
@@ -21,11 +14,20 @@
 </head>
 
 <body>
+
   <script>
     function fireLAMDirectCallEvent() {
       // This is it!
       try {
-        window._satellite.track("PaulRule", { "publishingId": "penny" })
+//        window._satellite.track("PaulRule", { "publishingId": "penny" })
+//        window._satellite.track("LAM-Listener", { })
+const rightNow = new Date() 
+        window._satellite.track("lam", { "timestamp":rightNow})
+
+
+        
+//         producedBy
+
         console.log("It worked! Check the network tab!")
       } catch (boom) {
         alert("oh no " + boom)
@@ -51,7 +53,7 @@
     }
 
   </script>
-NEW 
+
 <a href="https://stackblitz.com/edit/adobe-sdk-doc?file=README.md">stackblizt</a>
   <div id="debugMode">Debug mode is off</div>
   <button onclick="fireLAMDirectCallEvent()">fireLAMDirectCallEvent</button>
@@ -81,6 +83,7 @@ NEW
     function step4() {
       // ENV!
       document.getElementById("imageToShow").src =  "a_env_2.png"
+      // document.getElementById("imageToShow").src =  "https://imgur.com/19Opfjp"
       document.getElementById("textToExplain").innerHTML = "Clicking is fun!"
     }
     function step5() {
