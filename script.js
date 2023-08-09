@@ -1,12 +1,52 @@
-    const tiny_information = {
-            "payload": {
-            "properties": {
-                "timestamp": 1691522180998,
-                "headerUnified": "home"
-            },
-            "anonymousId": "296bbcb1-17ca-4e29-a05b-173364be9381"
+
+function flatten(objectToFlatten) {
+    // This will not be used in the logic of the page - but it will be helpful to put this page together
+    function flattenObject(obj) {
+      const accumulator = {};
+      for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          if (typeof obj[key] == 'object' && obj[key] != null) {
+            const flatObject = flattenObject(obj[key]);
+            for (let x in flatObject) {
+              if (flatObject.hasOwnProperty(x)) {
+                accumulator[key + '.' + x] = flatObject[x];
+              }
             }
+          } else {
+            accumulator[key] = obj[key];
+          }
         }
+      }
+      return accumulator;
+    }
+    return flattenObject(objectToFlatten);
+  }
+
+
+//   function inflateObject() {
+//     const EVENT_TYPE = eventType.toUpperCase();
+//     const tmp = flatten(everything[EVENT_TYPE]);
+//     const seen = {};
+//     for (let k in tmp) {
+//       if (k.includes('zodValidationFn')) {
+//         // ignore it
+//       } else {
+//         seen[k] = tmp[k];
+//       }
+//     }
+//     return seen;
+//   }
+
+
+const tiny_information = {
+    "payload": {
+        "properties": {
+            "timestamp": 1691522180998,
+            "headerUnified": "home"
+        },
+        "anonymousId": "296bbcb1-17ca-4e29-a05b-173364be9381"
+    }
+}
 const information = {
     "payload": {
         "type": "trackEnd",

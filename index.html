@@ -27,6 +27,18 @@
           document.getElementById("objectToSend").value = JSON.stringify(information, null, 2)
         }
       }
+
+      function flattenTheObject() {
+        try { 
+          const rawString = document.getElementById("objectToSend").value
+          const obj = JSON.parse(rawString)
+          const flat = flatten(obj)
+          document.getElementById("objectToSend").value = JSON.stringify(flat, null, 2)
+        } catch (uglyJson) {
+          alert("Your json is ill-formed: " + uglyJson)
+        }
+      }
+
     </script>
     <table border="1">
       <tr>
@@ -50,6 +62,9 @@
         <td> Tag='Aug8abc' (cf. script source ) </td>
         <td>
           <a href="https://github.com/mulefish/adobe_docs/blob/main/index.html" target="_blank">github repo</a>
+        </td>
+        <td>
+          <button onClick="flattenTheObject()">flattenTheObject</button>
         </td>
       </tr>
     </table>
@@ -93,7 +108,8 @@
           <button class='steps' onClick="showThing('https://imgur.com/LD0snIW.png', ' ', '400')">step13a</button>See the picked rule <br />
           <button class='steps' onClick="showThing('https://imgur.com/w4fVNhN.png', ' ', '400')">step13b</button>Rule details - events <br />
           <button class='steps' onClick="showThing('https://imgur.com/VXFbjXN.png', ' ', '200')">step13c</button>Rule details - custom code <br />
-          <button class='steps' onClick="showThingSpecial('https://imgur.com/zvPK8yQ.png', ' ', '100')">step13d</button>Rule details - custom code <br /> Data Object <br />
+          <button class='steps' onClick="showThingSpecial('https://imgur.com/zvPK8yQ.png', ' ', '100')">step13d</button>Rule details - custom code <br /> 
+          <b>Data Object</b><br />
           <button class='steps' onClick="showThing('https://imgur.com/P3AVqYY.png', 'This is tricky')">step14</button>XDM and Data Object <br /> TODO: Publishing Flow! ... <br />
         </td>
         <td valign="top">
