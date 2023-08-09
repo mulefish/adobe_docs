@@ -1,5 +1,4 @@
 function fireLAMDirectCallEvent() {
-
     try {
         const rawString = document.getElementById("objectToSend").value
         const obj = JSON.parse(rawString)

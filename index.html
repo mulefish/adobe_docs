@@ -66,10 +66,24 @@
         <td>
           <button onClick="flattenTheObject()">flattenTheObject</button>
         </td>
+        <td>
+          <button onClick="showTelemetryFunction()">telemetry func view</button>
+        </td>
+        <td>
+          <button onClick="showTelemetryDebugFunction()">telemetry debug func view</button>
+        </td>
       </tr>
     </table>
     <hr />
     <script>
+      function showTelemetryFunction() { 
+        const x = fireLAMDirectCallEvent.toString(); 
+        document.getElementById("objectToSend").value = x
+      }
+      function showTelemetryDebugFunction() { 
+        const x = useDebugMode.toString(); 
+        document.getElementById("objectToSend").value = x
+      }
       function showThing(pic, txt, height = "500") {
         document.getElementById("imageToShow").src = pic
         document.getElementById("imageToShow").height = height
@@ -121,7 +135,7 @@
       </tr>
     </table>
     <hr />
-    <textarea id="objectToSend" rows="40" cols="150"></textarea>
+    <textarea id="objectToSend" rows="40" cols="180" spellcheck="false"></textarea>
     <script>
       function populate() {
         document.getElementById("objectToSend").value = JSON.stringify(information, null, 2)
