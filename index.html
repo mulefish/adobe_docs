@@ -94,12 +94,19 @@
   <hr />
   <script>
 
-    function step1() {
-      // // choose tags 
-      document.getElementById("imageToShow").src = "a_tags_1.png"
-      document.getElementById("imageToShow").height = "500"
-      document.getElementById("textToExplain").innerHTML = "Adobe has a special skill with labeling things! Pick the correct 'tags' link!"
+    function showThing(pic, txt, height="500") {
+      document.getElementById("imageToShow").src = pic
+      document.getElementById("imageToShow").height = height
+      document.getElementById("textToExplain").innerHTML = txt
     }
+
+
+    // function step1() {
+    //   // // choose tags 
+    //   document.getElementById("imageToShow").src = "a_tags_1.png"
+    //   document.getElementById("imageToShow").height = "500"
+    //   document.getElementById("textToExplain").innerHTML = "Adobe has a special skill with labeling things! Pick the correct 'tags' link!"
+    // }
     function step2() {
       // // choose tags 
       document.getElementById("imageToShow").src = "a_tags_2.png"
@@ -107,13 +114,13 @@
       // document.getElementById("imageToShow").height = "500"      
       document.getElementById("textToExplain").innerHTML = "Francis created this tag w/ WebSDK in 2022 (?). Trivia: Lulu and Adobe have been talking about WebSDK for a little bit of time now IMGUR"
     }
-    function step3() {
-      // ENV!
-      document.getElementById("imageToShow").src = "a_env_1.png"
-      document.getElementById("imageToShow").height = "300"
+    // function step3() {
+    //   // ENV!
+    //   document.getElementById("imageToShow").src = "a_env_1.png"
+    //   document.getElementById("imageToShow").height = "300"
 
-      document.getElementById("textToExplain").innerHTML = ""
-    }
+    //   document.getElementById("textToExplain").innerHTML = ""
+    // }
     function step4() {
       // ENV!
       document.getElementById("imageToShow").src = "a_env_2.png"
@@ -202,17 +209,22 @@
           <legend>Do the needful!</legend>
           <ul>
             <li>step0: <a
-                href="https://experience.adobe.com/#/@lululemonathleticacanadainc/sname:prod/platform/v2/home">https://experience.adobe.com/#/@lululemonathleticacanadainc/sname:prod/platform/v2/home</a>
+                target="_blank" href="https://experience.adobe.com/#/@lululemonathleticacanadainc/sname:prod/platform/v2/home">https://experience.adobe.com</a>
             </li>
-            <li><button class='steps' onCLick="step1()">step1</button>'tags' nav button.</li>
-            <li><button class='steps' onClick="step2()">step2</button>Choose the correct tag - i.e., the one with
-              WebSDK. An
-              'enviornment' - create an ENV within that Tag</li>
-            <li><button class='steps' onClick="step3()">step3</button>Env nav</li>
-            <li><button class='steps' onClick="step4()">step4</button>Click 'add env' button</li>
-            <li><button class='steps' onClick="step5()">step5</button>Choices! Pick DEV</li>
-            <li><button class='steps' onClick="step6()">step6</button>Start to create an ENV</li>
-            <li><button class='steps' onClick="step7()">step7</button>Get receipt of script location</li>
+
+            <li><button class='steps' onClick="showThing('https://imgur.com/DWmVumY.png','Adobe has a special skill with labeling things! Pick the correct tags link!')">step1</button> Navigation is hard</li>
+            <li><button class='steps' onClick="showThing('https://imgur.com/h8EMFuZ.png','Francis created this tag w/ WebSDK in 2022 (?)')">step2</button> Get Tag w/ SDK on it</li>  
+            <li><button class='steps' onClick="showThing('https://imgur.com/oQR1DcS.png','Need an ENV!')">step3</button>Need an ENV!</li>  
+            <li><button class='steps' onClick="showThing('https://imgur.com/19Opfjp.png','Clicking is fun!')">step4</button>Click 'add env' button ! </li>
+            <li><button class='steps' onClick="showThing('https://imgur.com/BPmxikh.png','', '300')">step5</button>Choices! Pick DEV!!!</li>
+            <li><button class='steps' onClick="showThing('https://imgur.com/BBjk0W6.png','Begin to create an ENV', '200')">step6</button>Start to create an ENV@!</li>
+
+            <li><button class='steps' onClick="showThing('https://imgur.com/L5u3AhB.png','Begin to create an ENV', '200')">step7</button>Get receipt of script location!</li>
+            <!-- <li><button class='steps' onClick="step7()">step7</button>Get receipt of script location</li> -->
+
+            <!-- <li><button class='steps' onClick="step5()">step5</button>Choices! Pick DEV</li> -->
+            <!-- <li><button class='steps' onClick="step6()">step6</button>Start to create an ENV</li> -->
+            <!-- <li><button class='steps' onClick="step7()">step7</button>Get receipt of script location</li> -->
             <li><button class='steps' onClick="step8()">step8</button>Create a LIB for the ENV</li>
             <li><button class='steps' onClick="step9()">step9</button>Put LIB into a ENV and BUILD it</li>
             <li><button class='steps' onClick="step10()">step10</button>Build the lib</li>
