@@ -1,183 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <!-- Aug8abc-->
+    <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-778c6227ec42-development.min.js" async></script>
+    <title>Adobe WebSDK</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <script src="logic.js"></script>
+  </head>
+  <body>
+    <script>
+      const BIG = "big"
+      const LITTLE = "little"
+      let informationToUse = BIG
 
-<head>
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+      function toggleInfoToUse() {
+        // See script.js for tiny_information & information
+        if (informationToUse === BIG) {
+          informationToUse = LITTLE
+          document.getElementById("objectToSend").value = JSON.stringify(tiny_information, null, 2)
+        } else {
+          informationToUse = BIG
+          document.getElementById("objectToSend").value = JSON.stringify(information, null, 2)
+        }
+      }
+    </script>
+    <table border="1">
+      <tr>
+        <td>
+          <a href="https://stackblitz.com/edit/adobe-sdk-doc?file=README.md">stackblizt</a>
+        </td>
+        <td>
+          <div id="debugMode">Debug mode is off</div>
+        </td>
+        <td>
+          <!-- See logic.js -->
+          <button onclick="fireLAMDirectCallEvent()">fireLAMDirectCallEvent</button>
+        </td>
+        <td>
+          <!-- See logic.js -->
+          <button onclick="useDebugMode()">useDebugMode</button>
+        </td>
+        <td>
+          <button onClick="toggleInfoToUse()">toggleInfoToUse</button>
+        </td>
+        <td> Tag='Aug8abc' (cf. script source ) </td>
+        <td>
+          <a href="https://github.com/mulefish/adobe_docs/blob/main/index.html" target="_blank">github repo</a>
+        </td>
+      </tr>
+    </table>
+    <hr />
+    <script>
+      function showThing(pic, txt, height = "500") {
+        document.getElementById("imageToShow").src = pic
+        document.getElementById("imageToShow").height = height
+        document.getElementById("textToExplain").innerHTML = txt
+      }
 
-  <!-- Aug8abc-->
-  <script src="https://assets.adobedtm.com/7a84fdea953b/aca65f0ced29/launch-778c6227ec42-development.min.js"
-    async></script>
-
-
-  <title>Adobe WebSDK</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js"></script>
-
-</head>
-
-<body>
-  <script>
-    const BIG = "big"
-    const LITTLE = "little"
-    let informationToUse = BIG
-    function toggleInfoToUse() {
-      if ( informationToUse === BIG ) {
-        informationToUse = LITTLE
-        document.getElementById("objectToSend").value = JSON.stringify(tiny_information, null, 2)
-      } else {  
-        informationToUse = BIG
+      function showThingSpecial(pic, txt, height = "500") {
+        // A little bit of alternative javascript - to give another idea to the end user
+        const complexStringToShow = `const dataObject = event.detail;				
+				<br/>console.log("Hello - I got this!", dataObject);
+				<br/>alloy('sendEvent', {
+				<br/>&nbsp;&nbsp;xdm: dataObject
+				<br/>})
+				<hr>`
+        showThing(pic, complexStringToShow, height)
+      }
+    </script>
+    <table border="1">
+      <tr>
+        <td valign="top"> step0: <a target="_blank" href="https://experience.adobe.com/#/@lululemonathleticacanadainc/sname:prod/platform/v2/home">https://experience.adobe.com</a>
+          <br />
+          <button class='steps' onClick="showThing('https://imgur.com/DWmVumY.png','Adobe has a special skill with labeling things! Pick the correct tags link!')">step1</button> Navigation is hard <br />
+          <button class='steps' onClick="showThing('https://imgur.com/h8EMFuZ.png','Francis created this tag w/ WebSDK in 2022 (?)')">step2</button> Get Tag w/ SDK on it <br />
+          <button class='steps' onClick="showThing('https://imgur.com/oQR1DcS.png','Need an ENV!')">step3</button>Need an ENV! <br />
+          <button class='steps' onClick="showThing('https://imgur.com/19Opfjp.png','Clicking is fun!')">step4</button>Click 'add env' button ! <br />
+          <button class='steps' onClick="showThing('https://imgur.com/BPmxikh.png','', '300')">step5</button>Choices! Pick DEV!!! <br />
+          <button class='steps' onClick="showThing('https://imgur.com/BBjk0W6.png','Begin to create an ENV', '200')">step6</button>Start to create an ENV@! <br />
+          <button class='steps' onClick="showThing('https://imgur.com/L5u3AhB.png','Begin to create an ENV', '200')">step7</button>Get receipt of script location! <br />
+          <button class='steps' onClick="showThing('https://imgur.com/CLWYj1t.png', 'Let us create a lib for the env now!', '200')">step8</button>Create a LIB for the ENV!! <br />
+          <button class='steps' onClick="showThing('https://imgur.com/mfGjAlb.png', ' ', '180')">step9</button>Put LIB into a ENV and BUILD it!! <br />
+          <button class='steps' onClick="showThing('https://imgur.com/EXy7w2H.png', ' ', '180')">step10</button>Build the lib <br />
+          <b>Rules: Use or pick</b>
+          <br />
+          <button class='steps' onClick="showThing('https://imgur.com/Ak831C7.png', ' ')">step11</button>Rules! <br />
+          <button class='steps' onClick="showThing('https://imgur.com/iG45q5i.png', ' ', '400')">step12</button>Rules: pick one or add one <br />
+          <button class='steps' onClick="showThing('https://imgur.com/LD0snIW.png', ' ', '400')">step13a</button>See the picked rule <br />
+          <button class='steps' onClick="showThing('https://imgur.com/w4fVNhN.png', ' ', '400')">step13b</button>Rule details - events <br />
+          <button class='steps' onClick="showThing('https://imgur.com/VXFbjXN.png', ' ', '200')">step13c</button>Rule details - custom code <br />
+          <button class='steps' onClick="showThingSpecial('https://imgur.com/zvPK8yQ.png', ' ', '100')">step13d</button>Rule details - custom code <br /> Data Object <br />
+          <button class='steps' onClick="showThing('https://imgur.com/P3AVqYY.png', 'This is tricky')">step14</button>XDM and Data Object <br /> TODO: Publishing Flow! ... <br />
+        </td>
+        <td valign="top">
+          <div id="steps">
+            <div id="textToExplain"></div>
+            <img id="imageToShow"></img>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <hr />
+    <textarea id="objectToSend" rows="40" cols="150"></textarea>
+    <script>
+      function populate() {
         document.getElementById("objectToSend").value = JSON.stringify(information, null, 2)
       }
-    }
-
-
-    function fireLAMDirectCallEvent() {
-
-      try {
-        const rawString = document.getElementById("objectToSend").value
-        const obj = JSON.parse(rawString)
-        document.getElementById("objectToSend").value = JSON.stringify(obj, null, 2)
-        try {
-          window._satellite.track("lam", obj)
-          console.log( "%c" + JSON.stringify(obj), "background:lightgreen")
-        } catch (boom) {
-          alert("oh no " + boom)
-        }
-      } catch (uglyJson) {
-        alert("Your json is ill-formed: " + uglyJson)
-      }
-    }
-
-    function useDebugMode() {
-      document.getElementById("debugMode").innerHTML = "Debug mode is on"
-      try {
-        const tracker = window._satellite;
-        const location = window.location.href;
-        if (_satellite) {
-          _satellite.setDebug(true);
-          _satellite.cookie.set('dtmTrackDev', true);
-          sessionStorage.setItem('lapel-debugger', true);
-          _satellite.logger.log(`(%E3%81%A3%E2%97%95%E2%80%BF%E2%97%95)%E3%81%A3 Debugging Enabled for ${location}`);
-        } else {
-          console.warn(`no ${tracker} detected`);
-        }
-      }
-      catch (error) {
-        console.warn(`${tracker} not detected, debugging not enabled for ${location}`);
-      }
-    }
-  </script>
-  <table border="1">
-    <tr>
-      <td>
-  <a href="https://stackblitz.com/edit/adobe-sdk-doc?file=README.md">stackblizt</a>
-  </td>
-  <td>
-
-  <div id="debugMode">Debug mode is off</div>
-  </td>
-  <td>
-
-  <button onclick="fireLAMDirectCallEvent()">fireLAMDirectCallEvent</button>
-  </td>
-  <td>
-
-  <button onclick="useDebugMode()">useDebugMode</button>
- </td>
- <td>
-  <button onClick="toggleInfoToUse()">toggleInfoToUse</button>
- </td>
- <td>
-  Tag='Aug8abc' (cf. script source )
- </td>
- <td>
-  <a href="https://github.com/mulefish/adobe_docs/blob/main/index.html" target="_blank" >github repo</a>
- </td>
- </tr>
- </table>
-  <hr />
-  <script>
-
-    function showThing(pic, txt, height="500") {
-      document.getElementById("imageToShow").src = pic
-      document.getElementById("imageToShow").height = height
-      document.getElementById("textToExplain").innerHTML = txt
-    }
-    function showThingSpecial(pic, txt, height="500") {
-      // A little bit of alternative javascript - to give another idea to the end user
-      const complexStringToShow = `const dataObject = event.detail;<br/>console.log("Hello - I got this!", dataObject);<br/>alloy('sendEvent', {<br/>&nbsp;&nbsp;xdm: dataObject<br/>})<hr>`
-      showThing(pic, complexStringToShow, height)
-    }
-  </script>
-
-  <table border="1">
-    <tr>
-      <td valign="top">
-
-
-
-        <frameset>
-          <legend>Do the needful!</legend>
-          <ul>
-            <li>step0: <a
-                target="_blank" href="https://experience.adobe.com/#/@lululemonathleticacanadainc/sname:prod/platform/v2/home">https://experience.adobe.com</a>
-            </li>
-
-            <li><button class='steps' onClick="showThing('https://imgur.com/DWmVumY.png','Adobe has a special skill with labeling things! Pick the correct tags link!')">step1</button> Navigation is hard</li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/h8EMFuZ.png','Francis created this tag w/ WebSDK in 2022 (?)')">step2</button> Get Tag w/ SDK on it</li>  
-            <li><button class='steps' onClick="showThing('https://imgur.com/oQR1DcS.png','Need an ENV!')">step3</button>Need an ENV!</li>  
-            <li><button class='steps' onClick="showThing('https://imgur.com/19Opfjp.png','Clicking is fun!')">step4</button>Click 'add env' button ! </li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/BPmxikh.png','', '300')">step5</button>Choices! Pick DEV!!!</li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/BBjk0W6.png','Begin to create an ENV', '200')">step6</button>Start to create an ENV@!</li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/L5u3AhB.png','Begin to create an ENV', '200')">step7</button>Get receipt of script location!</li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/CLWYj1t.png', 'Let us create a lib for the env now!', '200')">step8</button>Create a LIB for the ENV!!</li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/mfGjAlb.png', ' ', '180')">step9</button>Put LIB into a ENV and BUILD it!!</li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/EXy7w2H.png', ' ', '180')">step10</button>Build the lib</li>
-            <li><b>Rules: Use or pick</b></li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/Ak831C7.png', ' ')">step11</button>Rules!</li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/iG45q5i.png', ' ', '400')">step12</button>Rules: pick one or add one</li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/LD0snIW.png', ' ', '400')">step13a</button>See the picked rule</li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/w4fVNhN.png', ' ', '400')">step13b</button>Rule details - events</li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/VXFbjXN.png', ' ', '200')">step13c</button>Rule details - custom code</li>
-            <li><button class='steps' onClick="showThingSpecial('https://imgur.com/zvPK8yQ.png', ' ', '100')">step13d</button>Rule details - custom code</li>
-            <li>Data Object</li>
-            <li><button class='steps' onClick="showThing('https://imgur.com/P3AVqYY.png', 'This is tricky')">step14</button>XDM and Data Object</li>
-
-            <li>TODO: Publishing Flow! ... </li>
-
-
-
-          </ul>
-        </frameset>
-
-      </td>
-      <td valign="top">
-
-        <div id="steps">
-          <div id="textToExplain"></div>
-          <img id="imageToShow"></img>
-        </div>
-
-
-      </td>
-    </tr>
-  </table>
-
-  <hr />
-  <textarea id="objectToSend" rows="40" cols="150"></textarea>
-
-
-
-  <script>
-    function populate() {
-      document.getElementById("objectToSend").value = JSON.stringify(information, null, 2)
-    }
-    populate()
-
-  </script>
-
-</body>
-
+      populate()
+    </script>
+  </body>
 </html>
