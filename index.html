@@ -100,6 +100,11 @@
       document.getElementById("textToExplain").innerHTML = txt
     }
 
+    function showThingSpecial(pic, txt, height="500") {
+      // A little bit of alternative javascript - to give another idea to the end user
+      const complexStringToShow = `const dataObject = event.detail;<br/>console.log("Hello - I got this!", dataObject);<br/>alloy('sendEvent', {<br/>&nbsp;&nbsp;xdm: dataObject<br/>})<hr>`
+      showThing(pic, complexStringToShow, height)
+    }
 
     // function step1() {
     //   // // choose tags 
@@ -218,27 +223,29 @@
             <li><button class='steps' onClick="showThing('https://imgur.com/19Opfjp.png','Clicking is fun!')">step4</button>Click 'add env' button ! </li>
             <li><button class='steps' onClick="showThing('https://imgur.com/BPmxikh.png','', '300')">step5</button>Choices! Pick DEV!!!</li>
             <li><button class='steps' onClick="showThing('https://imgur.com/BBjk0W6.png','Begin to create an ENV', '200')">step6</button>Start to create an ENV@!</li>
-
             <li><button class='steps' onClick="showThing('https://imgur.com/L5u3AhB.png','Begin to create an ENV', '200')">step7</button>Get receipt of script location!</li>
-            <!-- <li><button class='steps' onClick="step7()">step7</button>Get receipt of script location</li> -->
+            <li><button class='steps' onClick="showThing('https://imgur.com/CLWYj1t.png', 'Let us create a lib for the env now!', '200')">step8</button>Create a LIB for the ENV!!</li>
+            <li><button class='steps' onClick="showThing('https://imgur.com/mfGjAlb.png', ' ', '180')">step9</button>Put LIB into a ENV and BUILD it!!</li>
+            <li><button class='steps' onClick="showThing('https://imgur.com/EXy7w2H.png', ' ', '180')">step10</button>Build the lib!!</li>
+            <li><b>Rules: Use or pick</b></li>
+            <li><button class='steps' onClick="showThing('https://imgur.com/Ak831C7.png', ' ')">step11</button>Rules!</li>
+            <li><button class='steps' onClick="showThing('https://imgur.com/iG45q5i.png', ' ', '400')">step12</button>Rules: pick one or add one</li>
+            <li><button class='steps' onClick="showThing('https://imgur.com/LD0snIW.png', ' ', '400')">step13a</button>See the picked rule</li>
+            <li><button class='steps' onClick="showThing('https://imgur.com/w4fVNhN.png', ' ', '400')">step13b</button>Rule details - events</li>
+            <li><button class='steps' onClick="showThing('https://imgur.com/VXFbjXN.png', ' ', '200')">step13c</button>Rule details - custom code</li>
+            <li><button class='steps' onClick="showThingSpecial('https://imgur.com/zvPK8yQ.png', ' ', '100')">step13d</button>Rule details - custom code</li>
+            <li>Data Object</li>
+            <li><button class='steps' onClick="showThing('https://imgur.com/P3AVqYY.png', 'This is tricky')">step14</button>XDM and Data Object</li>
 
-            <!-- <li><button class='steps' onClick="step5()">step5</button>Choices! Pick DEV</li> -->
-            <!-- <li><button class='steps' onClick="step6()">step6</button>Start to create an ENV</li> -->
-            <!-- <li><button class='steps' onClick="step7()">step7</button>Get receipt of script location</li> -->
-            <li><button class='steps' onClick="step8()">step8</button>Create a LIB for the ENV</li>
-            <li><button class='steps' onClick="step9()">step9</button>Put LIB into a ENV and BUILD it</li>
-            <li><button class='steps' onClick="step10()">step10</button>Build the lib</li>
-            <li>Now: Pick a RULE! TODO: Add a 'pick rule' OR 'create rule' path!</li>
-            <li><button class='steps' onClick="step11()">step11</button>Rules</li>
-            <li><button class='steps' onClick="step12()">step12</button>Rules pick one</li>
-            <li><button class='steps' onClick="step13()">step13</button>See the picked rule</li>
-            <li>&nbsp;&nbsp;&nbsp;&nbsp;<button class='steps' onClick="step13_1()">step13_1</button> - events</li>
-            <li>&nbsp;&nbsp;&nbsp;&nbsp;<button class='steps' onClick="step13_2a()">step13_2</button> - custom code
+            <!-- <li><button class='steps' onClick="step12()">step12</button>Rules pick one</li> -->
+            <!-- <li><button class='steps' onClick="step13()">step13</button>See the picked rule</li> -->
+            <!-- <li>&nbsp;&nbsp;&nbsp;&nbsp;<button class='steps' onClick="step13_1()">step13_1</button> - events</li> -->
+            <!-- <li><button class='steps' onClick="step13_2a()">step13_2</button> - custom code
               (listener event ) </li>
-            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class='steps'
+            <li><button class='steps'
                 onClick="step13_2b()">step13_2</button> - custom code (listener event ) </li>
-            <li>&nbsp;&nbsp;&nbsp;&nbsp;<button class='steps' onClick="step13_3()">step13_3</button> - SDK send event
-            </li>
+            <li><button class='steps' onClick="step13_3()">step13_3</button> - SDK send event
+            </li> -->
             <li>TODO: Publishing Flow!</li>
 
 
