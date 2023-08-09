@@ -89,6 +89,9 @@
  <td>
   <button onClick="toggleInfoToUse()">toggleInfoToUse</button>
  </td>
+ <td>
+  Tag='Aug8abc' (cf. script source )
+ </td>
  </tr>
  </table>
   <hr />
@@ -99,109 +102,11 @@
       document.getElementById("imageToShow").height = height
       document.getElementById("textToExplain").innerHTML = txt
     }
-
     function showThingSpecial(pic, txt, height="500") {
       // A little bit of alternative javascript - to give another idea to the end user
       const complexStringToShow = `const dataObject = event.detail;<br/>console.log("Hello - I got this!", dataObject);<br/>alloy('sendEvent', {<br/>&nbsp;&nbsp;xdm: dataObject<br/>})<hr>`
       showThing(pic, complexStringToShow, height)
     }
-
-    // function step1() {
-    //   // // choose tags 
-    //   document.getElementById("imageToShow").src = "a_tags_1.png"
-    //   document.getElementById("imageToShow").height = "500"
-    //   document.getElementById("textToExplain").innerHTML = "Adobe has a special skill with labeling things! Pick the correct 'tags' link!"
-    // }
-    function step2() {
-      // // choose tags 
-      document.getElementById("imageToShow").src = "a_tags_2.png"
-      //      document.getElementById("imageToShow").src =  "https://i.imgur.com/19Opfjp.png"
-      // document.getElementById("imageToShow").height = "500"      
-      document.getElementById("textToExplain").innerHTML = "Francis created this tag w/ WebSDK in 2022 (?). Trivia: Lulu and Adobe have been talking about WebSDK for a little bit of time now IMGUR"
-    }
-    // function step3() {
-    //   // ENV!
-    //   document.getElementById("imageToShow").src = "a_env_1.png"
-    //   document.getElementById("imageToShow").height = "300"
-
-    //   document.getElementById("textToExplain").innerHTML = ""
-    // }
-    function step4() {
-      // ENV!
-      document.getElementById("imageToShow").src = "a_env_2.png"
-      // document.getElementById("imageToShow").src =  "https://imgur.com/19Opfjp"
-      document.getElementById("textToExplain").innerHTML = "Clicking is fun!"
-    }
-    function step5() {
-
-      document.getElementById("imageToShow").src = "a_env_3.png"
-      document.getElementById("textToExplain").innerHTML = ""
-    }
-    function step6() {
-
-      document.getElementById("imageToShow").src = "a_env_4.png"
-      document.getElementById("textToExplain").innerHTML = "Begin to create an ENV"
-    }
-    function step7() {
-      document.getElementById("imageToShow").src = "a_env_5.png"
-      document.getElementById("textToExplain").innerHTML = "Save this info!"
-    }
-    function step8() {
-
-      document.getElementById("imageToShow").src = "a_env_lib_6.png"
-      document.getElementById("imageToShow").height = "200"
-
-      document.getElementById("textToExplain").innerHTML = "Let's create a lib for the env now!"
-    }
-    function step9() {
-      document.getElementById("imageToShow").src = "a_env_lib_7.png"
-      document.getElementById("imageToShow").height = "200"
-      document.getElementById("textToExplain").innerHTML = "Let's create a lib for the env now!"
-    }
-
-    function step10() {
-      document.getElementById("imageToShow").src = "a_env_lib_8.png"
-      document.getElementById("imageToShow").height = "400"
-      document.getElementById("textToExplain").innerHTML = "Build the lib"
-    }
-    function step11() {
-      document.getElementById("imageToShow").src = "a_rules_1.png"
-      document.getElementById("imageToShow").height = "400"
-      document.getElementById("textToExplain").innerHTML = "Rules"
-    }
-    function step12() {
-      document.getElementById("imageToShow").src = "a_rules_2.png"
-      document.getElementById("imageToShow").height = "400"
-      document.getElementById("textToExplain").innerHTML = "Pick a rule"
-    }
-    function step13() {
-      document.getElementById("imageToShow").src = "a_rules_3.png"
-      document.getElementById("imageToShow").height = "400"
-      document.getElementById("textToExplain").innerHTML = "See the rule"
-    }
-    function step13_1() {
-      document.getElementById("imageToShow").src = "a_rules_3_sub_1.png"
-      document.getElementById("imageToShow").height = "400"
-      document.getElementById("textToExplain").innerHTML = "See the rule"
-    }
-    function step13_2a() {
-      document.getElementById("imageToShow").src = "a_rules_3_sub_2a.png"
-      document.getElementById("imageToShow").height = "400"
-      document.getElementById("textToExplain").innerHTML = "text goes here"
-    }
-    function step13_2b() {
-      document.getElementById("imageToShow").src = "a_rules_3_sub_2b.png"
-      document.getElementById("imageToShow").height = "400"
-      document.getElementById("textToExplain").innerHTML = "Some js - just print off what it got"
-    }
-
-    function step13_3() {
-      document.getElementById("imageToShow").src = "a_rules_3_sub_3.png"
-      document.getElementById("imageToShow").height = "600"
-      document.getElementById("textToExplain").innerHTML = "XDM! This is a tricky thing!"
-    }
-
-
   </script>
 
   <table border="1">
@@ -237,15 +142,6 @@
             <li>Data Object</li>
             <li><button class='steps' onClick="showThing('https://imgur.com/P3AVqYY.png', 'This is tricky')">step14</button>XDM and Data Object</li>
 
-            <!-- <li><button class='steps' onClick="step12()">step12</button>Rules pick one</li> -->
-            <!-- <li><button class='steps' onClick="step13()">step13</button>See the picked rule</li> -->
-            <!-- <li>&nbsp;&nbsp;&nbsp;&nbsp;<button class='steps' onClick="step13_1()">step13_1</button> - events</li> -->
-            <!-- <li><button class='steps' onClick="step13_2a()">step13_2</button> - custom code
-              (listener event ) </li>
-            <li><button class='steps'
-                onClick="step13_2b()">step13_2</button> - custom code (listener event ) </li>
-            <li><button class='steps' onClick="step13_3()">step13_3</button> - SDK send event
-            </li> -->
             <li>TODO: Publishing Flow!</li>
 
 
